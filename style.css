@@ -1,0 +1,272 @@
+@import "compass/css3";
+
+@-webkit-keyframes pulse {
+  0% { box-shadow:0 0 10px #d1bd0aaf, inset 0 0 250px #d1bd0aaf; }
+  25% { box-shadow:0 0 15px #6e2a18, inset 0 0 125px #6e2a18; }
+  50% { box-shadow:0 0 20px #2b190d, inset 0 0 75px #2b190d; }
+  75% { box-shadow:0 0 15px #6e2a18, inset 0 0 125px #6e2a18; }
+  100% { box-shadow:0 0 10px #d1bd0aaf, inset 0 0 250px #d1bd0aaf; }
+}
+
+
+body {
+  font-family: Helvetica, Arial, non-serif;
+  font-weight: lighter;
+  /* background: radial-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.25)); */
+  background-color: rgb(75, 74, 74);
+  /* background-color: #c6e2d8; */
+  height: 100vh;
+}
+
+h1 {
+  font-family: Helvetica;
+  font-weight: lighter;
+  font-family: "Damion", cursive;
+  font-size: 3em;
+  margin-top: .5em;
+  text-decoration: underline;
+  /* background: linear-gradient(45deg, #3d9970, #39cccc); */
+  /* background: linear-gradient(45deg, #000000, #ccb139); */
+  color: white;
+  /* opacity: .6; */
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: rgba(0, 0, 0, 0.2); */
+}
+
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.input-wrap {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(45deg, #3d9970, #39cccc);
+  border-radius: 5px;
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* .details {
+  background-color: #615f5f;
+
+} */
+
+#search{
+  width: 55vw;
+}
+
+
+th,
+td {
+  text-align: left;
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.logo{
+  width: 80vw;
+  max-width: 800px;
+}
+
+.title {
+  width: 80%;
+}
+/* will prob delete ALL FROM SCOTTISH DUDE TUTORIAL */
+.breakrow {
+  width: 90%;
+}
+.datarow {
+  width: 90%;
+  background-color: #39cccc;
+  /* display: unset; */
+}
+/**/
+
+.sortable-helper {
+  background-color: red;
+}
+
+label[for="search"] {
+  margin: 0 0.5em 0 0;
+  cursor: pointer;
+}
+
+input {
+  padding: 0.5em;
+  font-size: 1em;
+  margin: 2em 0 0 0;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+
+
+/* 
+Accordian */
+.accordion {
+  width:80%;
+  /* margin-top: .5em; */
+  max-width: 1100px;
+ box-shadow: 0 0 20px rgba(0, 0, 0, 2);
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: #CFB87C; */
+  margin: auto;  
+}
+
+.accordion__label,
+.accordion__content {
+  padding: 12px 20px;
+
+}
+
+.accordion__label {
+  display: block;
+  color: #000000;
+  text-shadow: 1px 1px 10px white, 1px 1px 10px white;
+  font-weight: 100; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+  opacity: .9;
+}
+
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+/* going to need to make this down arrow in adobe illustrator */
+.accordion__label::after {
+  content:"";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
+  width: 14px;
+  height: 5px;
+  /* width: auto;
+  height: auto; */
+  background-image: url('blackArrow2.png');
+  background-size:cover;
+  transition: transform 0.4s;
+}
+
+.accordion__content {
+  background-color: rgba(255, 255, 255, 0.753);
+  font-family:Arial, Helvetica, sans-serif;
+  line-height: 1.3;
+  font-size: 0.85em;
+  display: none;
+  
+}
+
+.accordion__input {
+  display: none;
+
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+ 
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
+ 
+}
+
+.glassware{
+  /* margin:auto; */
+  width: fit-content;
+    
+}
+
+.glassware img{
+  height: 20vh;
+ padding:7%;
+ border-radius: 10%;
+  
+-webkit-animation: pulse 12s linear 1s infinite;
+}
+
+
+
+
+/* 
+-webkit-filter:  pulse 3s linear 1s infinite;
+  drop-shadow(1px 1px 0 black)
+  drop-shadow(-1px -1px 0 black); 
+
+  filter:
+  drop-shadow(1px 1px 0 black) 
+ drop-shadow(-1px -1px 0 black); 
+ pulse 3s linear 1s infinite;
+
+
+-webkit-animation: pulse 3s linear 1s infinite;
+}  */
+
+
+.menuButton {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  /* margin: 0.9vh; */
+  margin: 0.35em;
+  width: 50px;
+  height: 50px;  
+  animation: spin 20s linear infinite;    
+ z-index:1;
+  }
+  .menuButtonLogo {
+    z-index: 2;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin: 1.2em;
+    width: 25px;
+    height: 25px;  
+    /* animation: spin 20s linear infinite;     */
+   
+    }
+
+        /* ALLOWS MENU BUTTON TO SPIN USING THE ANIMATION ATTRIBUTE */
+        
+        @keyframes spin{
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+              transform: rotate(360deg);
+          }
+      }
+
+      @media only screen and (max-width:600px){
+        .accordion {
+        width:70%;
+      
+      }
+        
+      }
