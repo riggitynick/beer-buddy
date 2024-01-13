@@ -175,11 +175,15 @@ srm.innerHTML= "<b>"+"SRM(color): "+"</b>"+row[5];
 
 //Glassware for each beer
 const glassware = document.createElement("p");
-glassware.innerHTML="<b>"+"Serving Glass - "+row[6]+":"+"</br></br>"+"</b>"+"<img src=data\\"+row[13]+".png"+">";
+glassware.innerHTML="<b>"+"Serving Glass:"+"</br>"+row[6]+"</br></br>"+"</b>"+"<img src=data\\"+row[13]+".png"+">";
 //glassware.innerHTML=row[6];
 glassware.className="glassware";
+
+glassware.style.backgroundColor="#"+row[12];
+
 //glassware.img.width=10;
 glassware.style.borderRadius=.5;
+
 
 
 //Serving temperature of each beer
